@@ -68,17 +68,31 @@ function Time() {
 var t = "";
 
 function start(btn) {
-    btn.disabled = true;
     t = setInterval(Time, 10);
+    document.getElementById("btnstop").style.display = "inline";
+    btn.style.display = "none";
 }
-function stop() {
+function Stop() {
     clearInterval(t);
+    document.getElementById("btnstop").style.display = "none";
+    document.getElementById("btnreset").style.display = "inline";
+    document.getElementById("btncontinue").style.display = "inline";
 }
 function Reset() {
     clearInterval(t);
-    document.getElementById("btn").disabled = false;
     document.getElementById("H").textContent = "00";
     document.getElementById("M").textContent = "00";
     document.getElementById("S").textContent = "00";
     document.getElementById("MS").textContent = "00";
+    document.getElementById("btnstart").style.display = "inline";
+    document.getElementById("btnstop").style.display = "none";
+    document.getElementById("btnreset").style.display = "none";
+    document.getElementById("btncontinue").style.display = "none";
+}
+function Continue() {
+    t = setInterval(Time, 10);    
+    document.getElementById("btnstart").style.display = "none";
+    document.getElementById("btnstop").style.display = "inline";
+    document.getElementById("btnreset").style.display = "none";
+    document.getElementById("btncontinue").style.display = "none";
 }
