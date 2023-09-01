@@ -5,46 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudoku</title>
-    <link rel="stylesheet" href="Style_sudoku.css">
-
-
+    <title>Time</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="tout">
-        <div class="choisir">
-            Niveau :
-            <select name="select" id="select">
-                <option value="choisir">Choisir</option>
-                <option value="facile">facile</option>
-                <option value="moyenne">moyenne</option>
-                <option value="difficile">difficile</option>
-            </select>
-            <button id="start" onclick="Start(this)">START</button><br>
+    <center>
+        <div class="time">
+            <span id="H">00</span>
+            <span>:</span>
+            <span id="M">00</span>
+            <span>:</span>
+            <span id="S">00</span>
+            <span>:</span>
+            <span id="MS">00</span>
         </div>
-        <div class="sudoku">
-            <div id="table"></div>
-            <div class="rejouer">
-                <a href="index.html"> <button id="rejouer">REJOUER</button></a><br>
-            </div>
-        </div>
-        <div class="time-vie">
-            <div class="time">
-                <span id="H">00</span>
-                <span>:</span>
-                <span id="M">00</span>
-                <span>:</span>
-                <span id="S">00</span>
-            </div>
-
-            <p id="chance">♥♥♥♥♥</p>
-        </div>
-    </div>
-
-
-
-    <script src="script_sudoku.js"></script>
+        <button onclick="start(this)" id="btnstart">Démarrer</button>
+        <button onclick="Stop()" id="btnstop" style="display: none;">Arrêter</button><br><br>
+        <button onclick="Reset()"   id="btnreset" style="display: none;">Réinitialiser</button>
+        <button onclick="Continue()" id="btncontinue" style="display: none;">Reprendre</button>
+    </center>
 </body>
 
 </html>
